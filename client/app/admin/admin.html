@@ -1,12 +1,36 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
+<button class="btn btn-link" ng-click="exportData()">
+  <span class="glyphicon glyphicon-share"></span> Export to Excel
+</button>
 
-<div class="container">
-  <p>The delete user and user index api routes are restricted to users with the 'admin' role.</p>
-  <ul class="list-group">
-    <li class="list-group-item" ng-repeat="user in users">
-        <strong>{{user.name}}</strong><br>
-        <span class="text-muted">{{user.email}}</span>
-        <a ng-click="delete(user)" class="trash"><span class="glyphicon glyphicon-trash pull-right"></span></a>
-    </li>
-  </ul>
+<div id="exportable">
+<table style="width:100%; font-family: arial, sans-serif; border-collapse: collapse;" id="table1">
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Name</th>
+      <th>Shaastra ID</th>
+      <th>Phone</th>
+      <th>Question</th>
+      <th>q1</th>
+      <th>q2</th>
+      <th>q3</th>
+      <th>q4</th>
+      <th>q5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="user in allUsers track by $index">
+      <td>{{ $index + 1 }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.festId }}</td>
+      <td>{{ user.phoneNumber }}</td>
+      <td>{{ user.question }}</td>
+      <td>{{ user.q1 }}</td>
+      <td>{{ user.q2 }}</td>
+      <td>{{ user.q3 }}</td>
+      <td>{{ user.q4 }}</td>
+      <td>{{ user.q5 }}</td>
+    </tr>
+  </tbody>
+</table>
 </div>

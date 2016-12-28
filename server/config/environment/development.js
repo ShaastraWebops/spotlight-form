@@ -5,8 +5,8 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/img-dev'
+    uri: 'mongodb://localhost/spotlight'
   },
 
-  seedDB: true
+  seedDB: false
 };

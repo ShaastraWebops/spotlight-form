@@ -22,12 +22,19 @@ exports.show = function(req, res) {
 
 // Creates a new img in the DB.
 exports.create = function(req, res) {
-  console.log(req.file);
-  return res.json(201, {message: "Boom!"});
-  /*Img.create(req.body, function(err, img) {
-    if(err) { return handleError(res, err); }
-    return res.json(201, img);
-  });*/
+  var ipAddress = req.ip;
+  req.body.ip = ipAddress;
+  Img.find({ip: ipAddress}).count( function( err, count){
+    if(count)
+      return res.json(204);
+    else
+    {
+      Img.create(req.body, function(err, img) {
+        if(err) { return handleError(res, err); }
+        return res.json(201, img);
+      });
+    }
+  });
 };
 
 // Updates an existing img in the DB.
