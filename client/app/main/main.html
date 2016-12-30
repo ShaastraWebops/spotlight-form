@@ -1,30 +1,95 @@
-<input type="text" ng-model="user.name"><br><br>
-<input type="text" ng-model="user.festId"><br><br>
-<input type="text" ng-model="user.phoneNumber"><br><br>
-<input type="text" ng-model="user.question"><br><br>
-<input type="radio" name="q1" value="1" ng-model="user.q1"> 1
-<input type="radio" name="q1" value="2" ng-model="user.q1"> 2
-<input type="radio" name="q1" value="3" ng-model="user.q1"> 3  
-<input type="radio" name="q1" value="4" ng-model="user.q1"> 4  
-<input type="radio" name="q1" value="5" ng-model="user.q1"> 5 <br><br>  
-<input type="radio" name="q2" value="1" ng-model="user.q2"> 1
-<input type="radio" name="q2" value="2" ng-model="user.q2"> 2
-<input type="radio" name="q2" value="3" ng-model="user.q2"> 3  
-<input type="radio" name="q2" value="4" ng-model="user.q2"> 4  
-<input type="radio" name="q2" value="5" ng-model="user.q2"> 5 <br><br>  
-<input type="radio" name="q3" value="1" ng-model="user.q3"> 1
-<input type="radio" name="q3" value="2" ng-model="user.q3"> 2
-<input type="radio" name="q3" value="3" ng-model="user.q3"> 3  
-<input type="radio" name="q3" value="4" ng-model="user.q3"> 4  
-<input type="radio" name="q3" value="5" ng-model="user.q3"> 5 <br><br>  
-<input type="radio" name="q4" value="1" ng-model="user.q4"> 1
-<input type="radio" name="q4" value="2" ng-model="user.q4"> 2
-<input type="radio" name="q4" value="3" ng-model="user.q4"> 3  
-<input type="radio" name="q4" value="4" ng-model="user.q4"> 4  
-<input type="radio" name="q4" value="5" ng-model="user.q4"> 5 <br><br>  
-<input type="radio" name="q5" value="1" ng-model="user.q5"> 1
-<input type="radio" name="q5" value="2" ng-model="user.q5"> 2
-<input type="radio" name="q5" value="3" ng-model="user.q5"> 3  
-<input type="radio" name="q5" value="4" ng-model="user.q5"> 4  
-<input type="radio" name="q5" value="5" ng-model="user.q5"> 5 <br><br>  
-<button ng-click="submitForm()">Go</button>
+
+<div class="container" style="margin-left: 0%; padding-left: 0%; margin-right: 0%; padding-right: 0%; width: 100%;">
+  <div class="row" style="margin-left: 0%; margin-right: 0%; padding-right: 0%;">
+    <div class="col-sm-12">
+      <h3>Welcome to Spotlight lecture series! Please fill this form for entry attendance. For speaker questions, please fill it later.</h3>
+    </div>
+    <div class="col-sm-12 container-fluid bg-3 text-left" style="margin-top: 8%;">
+      <form class="form" name="form" ng-submit="submitForm(form)">
+
+        <div class="form-group">
+          <label>Name</label>
+
+          <input type="text" class="form-control" ng-model="user.name">
+        </div>
+
+        <div class="form-group">
+          <label>Shaastra ID</label>
+
+          <input type="text" class="form-control" ng-model="user.festId">
+        </div>
+
+        <div class="form-group">
+          <label>Phone Number</label>
+
+          <input type="text" class="form-control" ng-model="user.phoneNumber">
+        </div>
+
+        <div class="form-group">
+          <label>Question</label>
+
+          <textarea rows="4" class="form-control" ng-model="user.question"></textarea>
+        </div>
+
+        <h3>Feedback (5-highest, 1-lowest)</h3>
+
+        <div class="form-group">
+          <label>Audibility of lecture and visibility of the presentation</label><br>
+          <input class="radio-inline" type="radio" name="q1" value="1" ng-model="user.q1" required> 1
+			<input class="radio-inline" type="radio" name="q1" value="2" ng-model="user.q1" required> 2
+			<input class="radio-inline" type="radio" name="q1" value="3" ng-model="user.q1" required> 3  
+			<input class="radio-inline" type="radio" name="q1" value="4" ng-model="user.q1" required> 4  
+			<input class="radio-inline" type="radio" name="q1" value="5" ng-model="user.q1" required> 5 <br><br>  
+         
+        </div>
+
+        <div class="form-group">
+          <label>Knowledge and communication of the speaker</label><br>
+            <input type="radio" class="radio-inline" name="q2" value="1" ng-model="user.q2" required> 1
+<input type="radio" class="radio-inline" name="q2" value="2" ng-model="user.q2" required> 2
+<input type="radio" class="radio-inline" name="q2" value="3" ng-model="user.q2" required> 3  
+<input type="radio" class="radio-inline" name="q2" value="4" ng-model="user.q2" required> 4  
+<input type="radio" class="radio-inline" name="q2" value="5" ng-model="user.q2" required> 5 <br><br> 
+         
+        </div>
+
+        <div class="form-group">
+          <label>Sufficiency of duration for lecture</label><br>
+            <input type="radio" class="radio-inline" name="q3" value="1" ng-model="user.q3" required> 1
+<input type="radio" class="radio-inline" name="q3" value="2" ng-model="user.q3" required> 2
+<input type="radio" class="radio-inline" name="q3" value="3" ng-model="user.q3" required> 3  
+<input type="radio" class="radio-inline" name="q3" value="4" ng-model="user.q3" required> 4  
+<input type="radio" class="radio-inline" name="q3" value="5" ng-model="user.q3" required> 5 <br><br> 
+         
+        </div>
+
+        <div class="form-group">
+          <label>Learning experience</label><br>
+            <input type="radio" class="radio-inline" name="q4" value="1" ng-model="user.q4" required> 1
+<input type="radio" class="radio-inline" name="q4" value="2" ng-model="user.q4" required> 2
+<input type="radio" class="radio-inline" name="q4" value="3" ng-model="user.q4" required> 3  
+<input type="radio" class="radio-inline" name="q4" value="4" ng-model="user.q4" required> 4  
+<input type="radio" class="radio-inline" name="q4" value="5" ng-model="user.q4" required> 5 <br><br>  
+         
+        </div>
+
+        <div class="form-group">
+          <label>General Organization and conduct of the event</label><br>
+            <input type="radio" class="radio-inline" name="q5" value="1" ng-model="user.q5" required> 1
+<input type="radio" class="radio-inline" name="q5" value="2" ng-model="user.q5" required> 2
+<input type="radio" class="radio-inline" name="q5" value="3" ng-model="user.q5" required> 3  
+<input type="radio" class="radio-inline" name="q5" value="4" ng-model="user.q5" required> 4  
+<input type="radio" class="radio-inline" name="q5" value="5" ng-model="user.q5" required> 5 <br><br>  
+         
+        </div>
+
+        
+          <button class="btn btn-inverse btn-lg btn-register" type="submit">
+            Submit
+          </button>
+        <hr/>
+      </form>
+    </div>
+  </div>
+  <hr>
+</div>
