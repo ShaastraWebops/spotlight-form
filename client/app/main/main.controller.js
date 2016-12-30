@@ -18,7 +18,10 @@ angular.module('imgApp')
       $http.post('/api/imgs', data).then(function(response){
         console.log(response);
         if(response.status == "201"){
-          alert("Thank you! Please fill the form after 30 minutes to ensure your attendance and to send questions for the speaker. This year we have even more exciting news! All those who attend 6 or more lectures get official Shaastra certificates! The best audience lecture questions get exclusive signed goodies from the speakers!");
+          // 1st form
+          alert("Thank you! Please fill the form after 30 minutes to ensure your attendance and to send questions for the speaker. All those who attend 6 or more lectures get official Shaastra certificates! The best audience lecture questions get exclusive signed goodies from the speakers!");
+          // 2nd form
+          // alert("Thank you for attending the lecture. That's not all! All those who attend 6 or more lectures get official Shaastra certificates! Don't miss this wonderful opportunity!");
           $scope.user.name="";
           $scope.user.festId="";
           $scope.user.phoneNumber="";
